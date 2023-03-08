@@ -4,6 +4,7 @@ const routes = require('express').Router();
  * Route Locations
  *****************************************/
 routes.use('/locations', require('./locations'))
+routes.use('/characters', require('./characters'))
 
 /******************************************
  * Test Route - Remove in production

@@ -4,3 +4,40 @@ Content-Type: application/json
 {
   
 }
+
+###
+GET http://localhost:3000/characters
+###
+GET http://localhost:3000/characters/6408e72fa75956efd8b044ed
+###
+POST http://localhost:3000/characters
+content-type: application/json
+
+{
+  "name": "Gandolf the yellow",
+  "race": "Wizard",
+  "description": "Literally the most powerful wizard, but this time he's yellow",
+  "history": "all of it",
+  "appearances": "harry potter and the half blood prince",
+  "bodycount": "6969",
+  "birth": "unknown",
+  "death": "please, he's immortal"
+}
+
+###
+PUT http://localhost:3000/characters/6408e72fa75956efd8b044ed
+content-type: application/json
+
+{
+  "name": "Kevin",
+  "race": "elf",
+  "description": "test elf",
+  "history": "none",
+  "appearances": "harry potter and the half blood prince",
+  "bodycount": "700",
+  "birth": "1969",
+  "death": "1975"
+}
+
+###
+DELETE http://localhost:3000/characters/6408e6d5a75956efd8b044ec
