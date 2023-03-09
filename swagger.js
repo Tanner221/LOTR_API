@@ -5,8 +5,8 @@ const doc = {
     title: 'My API',
     description: 'Description',
   },
-  host: 'localhost:3000',
-  schemes: ['http'],
+  host: 'lotr-api.onrender.com/',
+  schemes: ['https'],
 };
 
 const outputFile = './src/routes/swagger.json';
