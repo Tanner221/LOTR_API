@@ -2,6 +2,8 @@ const express = require('express');
 const mongodb = require('./db/connect');
 const bodyParser = require('body-parser');
 const { auth } = require('express-openid-connect');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./routes/swagger.json');
 
 const app = express();
 
@@ -35,6 +37,8 @@ app
 })
 .use('/', require('./routes'));
 
+app.use('/api-docs', swaggerUi.serve);
+app.get('/api-docs', swaggerUi.setup(swaggerDocument));
 
 process.on('uncaughtException', (err, origin) => {
   console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);
