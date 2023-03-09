@@ -3,7 +3,7 @@ const ObjectId = require("mongodb").ObjectId
 const {validationResult} = require("express-validator")
 
 const getAll = async (req, res) => {
-	const result = await mongodb.getDb().db().collection("Characters").find()
+	const result = await mongodb.getDb().db('LOTR').collection("Characters").find()
 	result.toArray().then((lists) => {
 		res.setHeader("Content-Type", "application/json")
 		res.status(200).json(lists)
@@ -38,7 +38,7 @@ const addCharacter =async(req, res) =>{
 		birth: req.body.birth,
 		death: req.body.death
 	  };
-	  const response = await mongodb.getDb().db().collection('Characters').insertOne(character);
+	  const response = await mongodb.getDb().db('LOTR').collection('Characters').insertOne(character);
 	  if (response.acknowledged) {
 		res.status(201).json(response);
 	  } else {
@@ -77,7 +77,7 @@ const updateCharacter =async(req, res) =>{
 
 const deleteCharacter =async(req, res) => {
 	const userId = new ObjectId(req.params.id);
-	const response = await mongodb.getDb().db().collection('Characters').remove({ _id: userId }, true);
+	const response = await mongodb.getDb().db('LOTR').collection('Characters').remove({ _id: userId }, true);
 	console.log(response);
 	if (response.deletedCount > 0) {
 	  res.status(200).send();
