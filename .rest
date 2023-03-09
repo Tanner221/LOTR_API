@@ -1,8 +1,18 @@
-POST http://localhost:3000/locations HTTP/1.1
+GET http://localhost:3000/locations/640a02d4e815ae1c8ada35b9 HTTP/1.1
 Content-Type: application/json
 
+###
+POST http://localhost:3000/locations
+content-type: application/json
+
 {
-  
+  "name": "The Shire",
+  "coordinates": "-37.857567 175.680557",
+  "description": "The Shire is a peaceful and idyllic region located in Middle-earth. It is home to the hobbits, a small and friendly humanoid race known for their love of good food, comfort, and simple pleasures. The Shire is characterized by its rolling green hills, scattered villages, and hobbit-holes, which are underground dwellings built into the hills. Life in the Shire revolves around agriculture, with most hobbits working as farmers, gardeners, or brewers. The region is protected by a loose but effective government, led by the Thain and the Mayor.",
+  "image": "Not Added Yet",
+  "population": "The Shire is populated only by hobbits. By the time of the War of the Ring, most of the whole hobbit race was there, except those who lived in Bree-land to the east.The original three tribes of hobbits (Harfoots, Fallohides, Stoors) united and mixed in the Shire. Only in the east part of the Shire there is a bigger Stoorish influence, which can be seen in that those hobbits sometimes grow beards.",
+  "areaType": "The shire is a region of low hills. Farmland and forestry is common in the area",
+  "hospitalityLevel": 5
 }
 
 ###
