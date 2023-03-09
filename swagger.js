@@ -5,7 +5,7 @@ const doc = {
     title: 'My API',
     description: 'Description',
   },
-  host: 'lotr-api.onrender.com/',
+  host: 'lotr-api.onrender.com',
   schemes: ['https'],
 };
 
