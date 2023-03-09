@@ -14,7 +14,7 @@ const getSingle = async (req, res) => {
 	const userId = new ObjectId(req.params.id)
 	const result = await mongodb
 		.getDb()
-		.db()
+		.db('LOTR')
 		.collection("Characters")
 		.find({ _id: userId })
 	result.toArray().then((lists) => {
