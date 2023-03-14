@@ -62,7 +62,7 @@ controller.addLocation = async (req, res) => {
     coordinates: req.body.coordinates,
     description: req.body.description,
     image: req.body.image,
-    population: req.body.poplulation,
+    population: req.body.population,
     areaType: req.body.areaType,
     hospitalityLevel: req.body.hospitalityLevel
   }
