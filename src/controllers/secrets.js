@@ -3,7 +3,7 @@ const ObjectId = require("mongodb").ObjectId
 const {validationResult} = require("express-validator")
 
 const getAll = async (req, res) => {
-	const result = await mongodb.getDb().db('LOTR').collection("Characters").find()
+	const result = await mongodb.getDb().db('LOTR').collection("Secrets").find()
 	result.toArray().then((lists) => {
 		res.setHeader("Content-Type", "application/json")
 		res.status(200).json(lists)
@@ -15,7 +15,7 @@ const getSingle = async (req, res) => {
 	const result = await mongodb
 		.getDb()
 		.db('LOTR')
-		.collection("Characters")
+		.collection("Secrets")
 		.find({ _id: userId })
 	result.toArray().then((lists) => {
 		res.setHeader("Content-Type", "application/json")
@@ -23,68 +23,58 @@ const getSingle = async (req, res) => {
 	})
 }
 
-const addCharacter =async(req, res) =>{
+const addSecret =async(req, res) =>{
 	const errors = validationResult(req)
 	if (!errors.isEmpty()) {
 		return res.status(400).json({ errors: errors.array() });
 	  }
-	const character = {
-		name: req.body.name,
+      const Secret = {
+		title: req.body.title,
 		race: req.body.race,
-		description: req.body.description,
-		history: req.body.history,
-		appearances: req.body.appearances,
-		bodycount: req.body.bodycount,
-		birth: req.body.birth,
-		death: req.body.death
+		description: req.body.description
 	  };
-	  const response = await mongodb.getDb().db('LOTR').collection('Characters').insertOne(character);
+	  const response = await mongodb.getDb().db('LOTR').collection('Secrets').insertOne(Secret);
 	  if (response.acknowledged) {
 		res.status(201).json(response);
 	  } else {
-		res.status(500).json(response.error || 'Some error occurred while creating the Character.');
+		res.status(500).json(response.error || 'Some error occurred while creating the Secret.');
 	  }
 	};
 
-const updateCharacter =async(req, res) =>{
+const updateSecret =async(req, res) =>{
 	const errors = validationResult(req)
 	if (!errors.isEmpty()) {
 		return res.status(400).json({ errors: errors.array() });
 	  }
 	const userId = new ObjectId(req.params.id);
-	const character = {
-		name: req.body.name,
+	const Secret = {
+		title: req.body.title,
 		race: req.body.race,
-		description: req.body.description,
-		history: req.body.history,
-		appearances: req.body.appearances,
-		bodycount: req.body.bodycount,
-		birth: req.body.birth,
-		death: req.body.death
+		description: req.body.description
 	  };
 	const response = await mongodb
 	  .getDb()
 	  .db('LOTR')
-	  .collection('Characters')
-	  .replaceOne({ _id: userId }, character);
+	  .collection('Secrets')
+	  .replaceOne({ _id: userId }, Secret);
 	console.log(response);
 	if (response.modifiedCount > 0) {
 	  res.status(204).send();
 	} else {
-	  res.status(500).json(response.error || 'Some error occurred while updating the Character.');
+	  res.status(500).json(response.error || 'Some error occurred while updating the Secret.');
 	}
   };
 
-const deleteCharacter =async(req, res) => {
+const deleteSecret =async(req, res) => {
 	const userId = new ObjectId(req.params.id);
-	const response = await mongodb.getDb().db('LOTR').collection('Characters').remove({ _id: userId }, true);
+	const response = await mongodb.getDb().db('LOTR').collection('Secrets').remove({ _id: userId }, true);
 	console.log(response);
 	if (response.deletedCount > 0) {
 	  res.status(200).send();
 	} else {
-	  res.status(500).json(response.error || 'Some error occurred while deleting the Character.');
+	  res.status(500).json(response.error || 'Some error occurred while deleting the Secret.');
 	}
   };
 
 
-module.exports = {getAll, getSingle, addCharacter, deleteCharacter, updateCharacter}
+module.exports = {getAll, getSingle, addSecret, deleteSecret, updateSecret}

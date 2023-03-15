@@ -10,14 +10,6 @@ exports.CheckLocationValidation = [
   check('hospitalityLevel', 'How hospitable is the area? Level 1-5').escape().trim().not().isEmpty()
 ]
 
-// name: req.body.name,
-// 		race: req.body.race,
-// 		description: req.body.description,
-// 		history: req.body.history,
-// 		appearances: req.body.appearances,
-// 		bodycount: req.body.bodycount,
-// 		birth: req.body.birth,
-// 		death: req.body.death
 exports.CharacterValidation = [
   check('name', 'Name of the character is required').escape().trim().not().isEmpty(),
   check('race', 'You must provide a race').escape().trim().not().isEmpty(),
@@ -27,4 +19,10 @@ exports.CharacterValidation = [
   check('bodycount', 'Add a body Count').escape().trim().not().isEmpty(),
   check('birth', 'Please include the birth').escape().trim().not().isEmpty(),
   check('death', 'Please include a death, or none if not yet dead').escape().trim().not().isEmpty(),
+]
+
+exports.secretValidation = [
+  check('title', 'please provide a title').escape().trim().not().isEmpty(),
+  check('race', 'please provide a race for the secret').escape().trim().not().isEmpty(),
+  check('description', 'please provide a description for the secret').escape().trim().not().isEmpty(),
 ]
