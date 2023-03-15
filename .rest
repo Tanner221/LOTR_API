@@ -51,3 +51,28 @@ content-type: application/json
 
 ###
 DELETE http://localhost:3000/characters/6408e6d5a75956efd8b044ec
+
+###
+GET  http://localhost:3000/secrets/
+
+###
+POST http://localhost:3000/secrets/
+content-type: application/json
+
+{
+  "title": "TestSecret",
+  "race": "Test",
+  "description": "This is a test of the secrets and is very secret, one might even say the ultimate secret."
+}
+
+###
+PUT http://localhost:3000/secrets/64125844d3d444e2b874cf96
+content-type: application/json
+
+{
+  "title": "TestSecret",
+  "race": "Elf",
+  "description": "This is a test of the secrets and is very secret, one might even say the ultimate secret."
+}
+###
+DELETE http://localhost:3000/secrets/64125844d3d444e2b874cf96
