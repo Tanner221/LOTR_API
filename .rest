@@ -24,14 +24,14 @@ POST http://localhost:3000/characters
 content-type: application/json
 
 {
-  "name": "Gandolf the yellow",
-  "race": "Wizard",
-  "description": "Literally the most powerful wizard, but this time he's yellow",
-  "history": "all of it",
-  "appearances": "harry potter and the half blood prince",
-  "bodycount": "6969",
-  "birth": "unknown",
-  "death": "please, he's immortal"
+  "name": "Gollum",
+  "race": "Hobbit (Stoor)",
+  "description": "A former hobbit who becomes obsessed with the One Ring, Gollum plays a crucial role in Frodo's journey and serves as a tragic figure in the story.",
+  "history": "none",
+  "appearances": "Misty Mountains, Gladden Fields, Moria, Lothlórien, Amon Hen, Fangorn, the Dead Marshes, Minas Morgul, Cirith Ungol, Mount Doom",
+  "bodycount": "6",
+  "birth": "TA 2430",
+  "death": "TA 3019 (dies in the Cracks of Doom while fighting with Frodo over the One Ring)"
 }
 
 ###
