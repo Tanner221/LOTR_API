@@ -80,6 +80,7 @@ exports.secretValidation = [
 ];
 
 exports.userValidation = [
+  check("userId", "provide a valid userId").escape().trim().not().isEmpty(),
   check("name", "please provide a name").escape().trim().not().isEmpty(),
   check("race", "please provide a race for the secret")
     .escape()
