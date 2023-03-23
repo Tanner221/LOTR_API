@@ -25,7 +25,7 @@ const getSingle = async (req, res) => {
     else{
       res.setHeader("Content-Type", "application/json")
       res.status(404).json({
-        message: 'Error: No location found'
+        message: 'Error: No character found'
       })
     }
 	}
