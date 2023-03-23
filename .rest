@@ -18,7 +18,7 @@ content-type: application/json
 ###
 GET http://localhost:3000/characters
 ###
-GET http://localhost:3000/characters/6408e72fa75956efd8b044ed
+GET http://localhost:3000/characters/640a02d4e815ae1c8ada35b9
 ###
 POST http://localhost:3000/characters
 content-type: application/json
@@ -76,3 +76,13 @@ content-type: application/json
 }
 ###
 DELETE http://localhost:3000/secrets/64125844d3d444e2b874cf96
+
+###
+POST http://localhost:3000/users HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Tanner Robinson",
+  "race": "Elf",
+  "email": "starwarstan2000@outlook.com"
+}
