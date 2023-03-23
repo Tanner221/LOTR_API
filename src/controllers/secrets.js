@@ -18,8 +18,15 @@ const getSingle = async (req, res) => {
 		.collection("Secrets")
 		.find({ _id: userId })
 	result.toArray().then((lists) => {
-		res.setHeader("Content-Type", "application/json")
-		res.status(200).json(lists[0])
+    if(lists.length > 0){
+      res.setHeader("Content-Type", "application/json")
+      res.status(200).json(lists[0])
+    }
+		else{
+      res.status(404).json({
+        message: "Error, no secrets found"
+      })
+    }
 	})
 }
 
