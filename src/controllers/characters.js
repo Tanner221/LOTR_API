@@ -18,9 +18,18 @@ const getSingle = async (req, res) => {
 		.collection("Characters")
 		.find({ _id: userId })
 	result.toArray().then((lists) => {
-		res.setHeader("Content-Type", "application/json")
-		res.status(200).json(lists[0])
-	})
+    if(lists.length > 0){
+      res.setHeader("Content-Type", "application/json")
+      res.status(200).json(lists[0])
+    }
+    else{
+      res.setHeader("Content-Type", "application/json")
+      res.status(404).json({
+        message: 'Error: No character found'
+      })
+    }
+	}
+  )
 }
 
 const addCharacter =async(req, res) =>{
