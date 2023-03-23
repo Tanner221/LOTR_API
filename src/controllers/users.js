@@ -36,6 +36,7 @@ const addUser = async (req, res) => {
     return res.status(400).json({ errors: errors.array() });
   }
   const user = {
+    userId: req.body.userId,
     name: req.body.name,
     race: req.body.race,
     email: req.body.email,
@@ -61,6 +62,7 @@ const updateUser = async (req, res) => {
   }
   const userId = new ObjectId(req.params.id);
   const user = {
+    userId: req.body.userId,
     name: req.body.name,
     race: req.body.race,
     email: req.body.email,
