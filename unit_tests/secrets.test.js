@@ -9,7 +9,7 @@ async function getInfo(url) {
 
 describe('The Secrets route', () => {
   it('shows that can get an individual object', async () => {
-    const response = await getInfo('http://localhost:3000/secrets/64125844d3d444e2b874cf96');
+    const response = await getInfo('http://localhost:3000/secrets/6422590eb9dd44ef0d166682');
     expect(response.status).toBe(200);
   })
 
