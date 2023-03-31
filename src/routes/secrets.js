@@ -3,7 +3,7 @@ const controller = require("../controllers/secrets")
 const {secretValidation} = require("../validation")
 const { requiresAuth } = require('express-openid-connect');
 
-routes.get("/", controller.getAll)
+routes.get("/", requiresAuth(), controller.getAll)
 
 routes.get("/:id", controller.getSingle)
 
