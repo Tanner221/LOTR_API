@@ -24,6 +24,7 @@
     },
     "/locations/": {
       "get": {
+        "tags": ["Locations"],
         "description": "",
         "parameters": [],
         "responses": {
@@ -36,6 +37,7 @@
         }
       },
       "post": {
+        "tags": ["Locations"],
         "description": "",
         "parameters": [
           {
@@ -84,6 +86,7 @@
     },
     "/locations/{id}": {
       "get": {
+        "tags": ["Locations"],
         "description": "",
         "parameters": [
           {
@@ -104,10 +107,24 @@
             "description": "Not Found"
           }
         }
+      },
+      "delete": {
+        "tags": ["Locations"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
       }
     },
     "/characters/": {
       "get": {
+        "tags": ["Characters"],
         "description": "",
         "produces": [
           "application/json"
@@ -120,6 +137,7 @@
         }
       },
       "post": {
+        "tags": ["Characters"],
         "description": "",
         "parameters": [
           {
@@ -171,6 +189,7 @@
     },
     "/characters/{id}": {
       "get": {
+        "tags": ["Characters"],
         "description": "",
         "produces": [
           "application/json"
@@ -193,6 +212,7 @@
         }
       },
       "put": {
+        "tags": ["Characters"],
         "description": "",
         "parameters": [
           {
@@ -248,6 +268,7 @@
         }
       },
       "delete": {
+        "tags": ["Characters"],
         "description": "",
         "parameters": [
           {
@@ -269,6 +290,7 @@
     },
     "/secrets/": {
       "get": {
+        "tags": ["Secrets"],
         "description": "",
         "produces": [
           "application/json"
@@ -281,6 +303,7 @@
         }
       },
       "post": {
+        "tags": ["Secrets"],
         "description": "",
         "parameters": [
           {
@@ -317,6 +340,7 @@
     },
     "/secrets/{id}": {
       "get": {
+        "tags": ["Secrets"],
         "description": "",
         "produces": [
           "application/json"
@@ -339,6 +363,7 @@
         }
       },
       "put": {
+        "tags": ["Secrets"],
         "description": "",
         "parameters": [
           {
@@ -379,6 +404,7 @@
         }
       },
       "delete": {
+        "tags": ["Secrets"],
         "description": "",
         "parameters": [
           {
@@ -400,6 +426,7 @@
     },
     "/users/": {
       "get": {
+        "tags": ["Users"],
         "description": "",
         "produces": [
           "application/json"
@@ -412,6 +439,7 @@
         }
       },
       "post": {
+        "tags": ["Users"],
         "description": "",
         "parameters": [
           {
@@ -451,6 +479,7 @@
     },
     "/users/{id}": {
       "get": {
+        "tags": ["Users"],
         "description": "",
         "produces": [
           "application/json"
@@ -473,6 +502,7 @@
         }
       },
       "put": {
+        "tags": ["Users"],
         "description": "",
         "parameters": [
           {
@@ -516,6 +546,7 @@
         }
       },
       "delete": {
+        "tags": ["Users"],
         "description": "",
         "parameters": [
           {
